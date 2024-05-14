@@ -1,19 +1,4 @@
-.cust {
-    border-radius: 0.5rem;
-    background-color: var(--color-white);
-    border: 1px solid black;
-    width: 30vw;
-}
 
-input {
-    border-color: white;
-}
-
-.searchSection {
-    border-left: 1px solid black;
-    height: 2.5rem;
-    width: 3.5rem;
-}
 
 .searchBar {
     width: 100%;
@@ -22,7 +7,7 @@ input {
 .innerBox {
     width: 40vw !important;
     background-color: white;
-    border: 1px solid black;
+    border: 1.7px solid black;
     border-radius: 0.5rem !important;
 }
 
@@ -34,6 +19,6 @@ input {
 }
 
 .searchButtonSectoion {
-    border-left: 1px solid black;
+    border-left: 1.7px solid black;
 
 }
