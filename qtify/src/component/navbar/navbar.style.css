@@ -10,9 +10,11 @@
 }
 
 .button {
+    padding: 0.4rem;
     background-color: var(--color-black) !important;
     color: var(--color-green) !important;
     font-weight: 600 !important;
     border-radius: 0.5rem !important;
     font-family: 'Poppins', sans-serif !important;
+    font-size: 15px;
 }
