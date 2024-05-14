@@ -18,3 +18,7 @@
     font-family: 'Poppins', sans-serif !important;
     font-size: 15px;
 }
+
+.button:hover {
+    cursor: pointer;
+  }
