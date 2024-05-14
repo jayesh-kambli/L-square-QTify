@@ -1,0 +1,14 @@
+.bg {
+    background-color: var(--color-green) !important;
+}
+
+.maxWidth {
+    width: 100%;
+}
+
+.button {
+    background-color: var(--color-black) !important;
+    color: var(--color-green) !important;
+    font-weight: 600 !important;
+    border-radius: 0.5rem !important;
+}
