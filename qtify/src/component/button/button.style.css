@@ -8,6 +8,7 @@
     border-radius: 0.5rem !important;
     font-family: 'Poppins', sans-serif !important;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .feedbackButton:hover {
