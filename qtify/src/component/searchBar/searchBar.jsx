@@ -31,8 +31,8 @@ export default function Search() {
               className="searchBar"
             />
           </Grid>
-          <Grid item md={1} className="removePadding searchButtonSectoion">
-            <SearchIcon className="searchIcon" style={{ color: "black" }} />
+          <Grid item md={1} className="removePadding searchButtonSectoion searchIcon">
+            <SearchIcon style={{ color: "black" }} />
           </Grid>
         </Grid>
     </Stack>
