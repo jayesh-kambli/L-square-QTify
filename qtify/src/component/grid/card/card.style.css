@@ -1,0 +1,52 @@
+.setSize {
+    height: 10.7rem;
+    overflow: hidden;
+}
+
+.profile {
+    width: 9.95rem;
+    height: 100%;
+    border-radius: 8px 8px 0px 0px;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
+
+.profileBg {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    /* width: 159px;
+    height: 205px; */
+     width: 9.95rem;
+    /*height: 13rem; */
+    padding: 0px;
+}
+
+.followSection {
+    width: auto;
+    height: 2.5rem;
+    margin: 0px;
+    padding-inline-start: 0.4rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.followText {
+    margin: 0px;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.bottomtext {
+    margin: 0px;
+    margin-top: 0.3rem;
+    color: var(--color-white);
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 400;
+    text-overflow: ellipsis;
+}

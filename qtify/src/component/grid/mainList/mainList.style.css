@@ -1,0 +1,62 @@
+.albumType {
+    margin: 0px;
+    margin-bottom: 1rem;
+    color: var(--color-white);
+}
+
+.green {
+    color: var(--color-green);
+}
+
+.maindiv {
+    padding-inline: 5rem;
+}
+
+.maindiv + .maindiv {
+    margin-top: 30px;
+    
+}
+
+.firstSlide {
+    width: 0px !important;
+    padding: 0px !important;
+}
+
+/* .swiper-button-prev {
+    height: 10px !important;
+    overflow: hidden;
+    background-color: var(--color-green);
+    opacity: 100 !important;
+} */
+
+.adjustSwiper {
+    position: relative;
+}
+
+
+.adjustSwiperPreBtn {
+    left: 3%;
+
+}
+
+.adjustSwiperNextBtn {
+    right: 3.2%;
+}
+
+.adjustSwiperNextBtn, .adjustSwiperPreBtn {
+    z-index: 1;
+    position: absolute;
+    top: 52%;
+    height: 2rem; 
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-green);
+    color: var(--color-white);
+    border-radius: 360px;
+}
+
+.arrow {
+    font-size: 15px !important;
+}

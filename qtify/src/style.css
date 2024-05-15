@@ -3,3 +3,8 @@
     --color-black: #121212;
     --color-white: #ffffff;
 }
+
+.body {
+    background-color: var(--color-black);
+    min-height: 100vh;
+}
