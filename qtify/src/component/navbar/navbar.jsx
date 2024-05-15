@@ -9,11 +9,12 @@ import logo from "./logo.png";
 import Stack from "@mui/material/Stack";
 import SearchBar from "../searchBar/searchBar";
 import styledd from 'styled-components';
+import Button from "../button/button"
 
-const Button = styledd.button`
-  font-family: 'Poppins', sans-serif;
-  /* Add more styles as needed */
-`;
+// const Button = styledd.button`
+//   font-family: 'Poppins', sans-serif;
+//   /* Add more styles as needed */
+// `;
 
 function Nav() {
   return (
@@ -43,7 +44,8 @@ function Nav() {
             </Stack>
             <SearchBar />
             <Stack>
-              <Button className="feedbackButton">Give Feedback</Button>
+              <Button text="Give Feedback" />
+              {/* <Button className="feedbackButton">Give Feedback</Button> */}
             </Stack>
           </Stack>
         </Toolbar>

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.feedbackButton {
+    padding: 0.4rem;
+    background-color: var(--color-black) !important;
+    color: var(--color-green) !important;
+    font-weight: 600 !important;
+    border-radius: 0.5rem !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px;
+}
+
+.feedbackButton:hover {
+    cursor: pointer !important;
+  }
