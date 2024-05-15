@@ -43,7 +43,7 @@ function Nav() {
             </Stack>
             <SearchBar />
             <Stack>
-              <Button className="button">Give Feedback</Button>
+              <Button className="feedbackButton">Give Feedback</Button>
             </Stack>
           </Stack>
         </Toolbar>
