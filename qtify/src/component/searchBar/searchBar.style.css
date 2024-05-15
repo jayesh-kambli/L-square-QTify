@@ -22,3 +22,7 @@
     border-left: 1.7px solid black;
 
 }
+
+.searchIcon:hover {
+    cursor: pointer !important;
+  }

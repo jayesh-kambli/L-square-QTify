@@ -22,3 +22,7 @@
 .button:hover {
     cursor: pointer !important;
   }
+
+.searchIcon:hover {
+    cursor: pointer !important;
+  }
