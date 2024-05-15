@@ -10,6 +10,7 @@
 
 .maindiv {
     padding-inline: 5rem;
+    position: relative;
 }
 
 .maindiv + .maindiv {
@@ -46,7 +47,8 @@
 .adjustSwiperNextBtn, .adjustSwiperPreBtn {
     z-index: 1;
     position: absolute;
-    top: 52%;
+    top: 50%;
+    transform: translateY(-50%);
     height: 2rem; 
     width: 2rem;
     display: flex;

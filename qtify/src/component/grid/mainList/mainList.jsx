@@ -47,11 +47,28 @@ export default function MainList({ data, key }) {
             onSwiper={setSwiperRef}
             slidesPerView={9}
             //   centeredSlides={true}
-            initialSlide={data.length - 1}
+            initialSlide={data.length}
             spaceBetween={30}
             navigation={false} // Disable default navigation
             modules={[Navigation]}
             className="mySwiper adjustSwiper"
+            breakpoints={{
+                400: {
+                    slidesPerView: 2,
+                  },
+                768: {
+                  slidesPerView: 4,
+                },
+                1200: {
+                    slidesPerView: 5,
+                  },
+                1300: {
+                  slidesPerView: 7,
+                },
+                1600: {
+                    slidesPerView: 9,
+                  },
+            }}
           >
             {/* <SwiperSlide className="firstSlide"></SwiperSlide> */}
             {data.map((album) => (
