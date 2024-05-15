@@ -1,0 +1,23 @@
+.background {
+    background-color: var(--color-black);
+    height: 30vh;
+}
+
+.mainColumn {
+    width: 50%;
+    height: 100%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    color: var(--color-white);
+}
+
+.adjust {
+    padding: 0px;
+    margin: 0px;
+}

@@ -1,10 +1,13 @@
 import React from 'react';
 import './style.css';
 import NavBar from "./component/navbar/navbar"
+import Hero from "./component/hero/hero"
 
 function App() {
-  return (
+  return (<>
     <NavBar />
+    <Hero />
+  </>
   );
 }
 
