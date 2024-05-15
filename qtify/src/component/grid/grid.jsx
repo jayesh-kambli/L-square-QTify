@@ -36,8 +36,8 @@ export default function Grid() {
 
   return (
     <>
-    <MainList data={[...data]} key={"dsf"}/>
-    <MainList data={[...data2]} key={"fdw"}/>
+    <MainList data={[...data]} Name={"Top Albums"}/>
+    <MainList data={[...data2]} Name={"New Albums"}/>
     </>
   );
 }

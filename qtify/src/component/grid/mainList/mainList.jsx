@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./mainList.style.css";
 import Card from "../card/card";
-import { Swiper, SwiperSlide } from "swiper/react"; // Import Navigation module directly
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -9,15 +9,15 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Stack from '@mui/material/Stack';
 
-export default function MainList({ data, key }) {
+export default function MainList({ data, Name }) {
   const [swiperRef, setSwiperRef] = useState(null);
 
-  useEffect(() => {
-    function mainListedData() {
-      console.log(data);
-    }
-    mainListedData();
-  }, [data]);
+  // useEffect(() => {
+  //   function mainListedData() {
+  //     console.log(data);
+  //   }
+  //   mainListedData();
+  // }, [data]);
 
   const goNext = () => {
     if (swiperRef) {
@@ -33,13 +33,13 @@ export default function MainList({ data, key }) {
 
   return (
     <>
-      <div className="maindiv" key={key}>
+      <div className="maindiv" >
         <Stack
           direction="row"
           justifyContent="space-between"
           alignItems="center"
           >
-        <h3 className="albumType">Top Albums</h3>
+        <h3 className="albumType">{Name}</h3>
         <h4 className="albumType green">Show all</h4>
         </Stack>
         <div>
