@@ -62,3 +62,7 @@
 .arrow {
     font-size: 15px !important;
 }
+
+.adjustSwiperNextBtn:hover, .adjustSwiperPreBtn:hover {
+    cursor: pointer;
+}

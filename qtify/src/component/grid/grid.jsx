@@ -3,41 +3,30 @@ import "./grid.style.css";
 import axios from "axios";
 import Card from "./card/card";
 import MainList from "./mainList/mainList";
+import { topAlbum, newAlbum } from "./../../api/api";
 
 export default function Grid() {
-    const [data, dataFn] = useState([]);
-    const [data2, dataFn2] = useState([]);
-    const [layout, layoutFn] = useState();
+  const [data, dataFn] = useState([]);
+  const [data2, dataFn2] = useState([]);
+  const [layout, layoutFn] = useState();
 
   useEffect(() => {
-    async function onload() {
-      axios
-        .get("https://qtify-backend-labs.crio.do/albums/top")
-        .then((response) => {
-            dataFn(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
+    const fetchTopAlbum = async () => {
+      const RawData = await topAlbum();
+      dataFn(RawData);
 
-        axios
-        .get("https://qtify-backend-labs.crio.do/albums/new")
-        .then((response) => {
-            dataFn2(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
-    }
+      const RawData2 = await newAlbum();
+      dataFn2(RawData2);
+    };
 
-    onload();
+    fetchTopAlbum();
+
   }, []);
-
 
   return (
     <>
-    <MainList data={[...data]} Name={"Top Albums"}/>
-    <MainList data={[...data2]} Name={"New Albums"}/>
+      <MainList data={[...data]} Name={"Top Albums"}/>
+      <MainList data={[...data2]} Name={"New Albums"}/>
     </>
   );
 }
