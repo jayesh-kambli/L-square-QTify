@@ -10,6 +10,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Stack from "@mui/material/Stack";
 import Tab from "./../tab/tab";
 import Context from "./../context";
+import Tooltip from "@mui/material/Tooltip";
 
 export default function MainList({ data, Name, Type, Filters }) {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -28,13 +29,9 @@ export default function MainList({ data, Name, Type, Filters }) {
     }
   };
 
-  // useEffect(() => {
-  //   console.log("this ==>", filterArray)
-  // }, [filterArray])
-
   return (
     <>
-      {Type == "Album" ? (
+      {Type === "Album" ? (
         <div className="maindiv">
           <Stack
             direction="row"
@@ -48,7 +45,6 @@ export default function MainList({ data, Name, Type, Filters }) {
             <Swiper
               onSwiper={setSwiperRef}
               slidesPerView={9}
-              //   centeredSlides={true}
               initialSlide={data.length}
               spaceBetween={30}
               navigation={false} // Disable default navigation
@@ -74,11 +70,15 @@ export default function MainList({ data, Name, Type, Filters }) {
             >
               {data.map((album) => (
                 <SwiperSlide key={album.id}>
-                  <Card
-                    img={album.image}
-                    follow={album.follows + " Follows"}
-                    title={album.title}
-                  />
+                  <Tooltip title={album.songs.length + " Songs"}>
+                    <div>
+                      <Card
+                        img={album.image}
+                        follow={album.follows + " Follows"}
+                        title={album.title}
+                      />
+                    </div>
+                  </Tooltip>
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -92,74 +92,73 @@ export default function MainList({ data, Name, Type, Filters }) {
         </div>
       ) : (
         <div className="maindiv">
-          <Context.Provider value ={{filterArray, filterArrayFn}}>
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <h3 className="albumType">{Name}</h3>
-            {/* <h4 className="albumType green">Show all</h4> */}
-          </Stack>
-          <div>
-          <Tab allFilters={[...Filters]} allSongs={[...data]}/>
-            <Swiper
-            onSwiper={setSwiperRef}
-            slidesPerView={9}
-            //   centeredSlides={true}
-            initialSlide={data.length}
-            spaceBetween={30}
-            navigation={false} // Disable default navigation
-            modules={[Navigation]}
-            className="mySwiper adjustSwiper"
-            breakpoints={{
-                400: {
+          <Context.Provider value={{ filterArray, filterArrayFn }}>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <h3 className="albumType">{Name}</h3>
+            </Stack>
+            <div>
+              <Tab allFilters={[...Filters]} allSongs={[...data]} />
+              <Swiper
+                onSwiper={setSwiperRef}
+                slidesPerView={9}
+                initialSlide={data.length}
+                spaceBetween={30}
+                navigation={false} // Disable default navigation
+                modules={[Navigation]}
+                className="mySwiper adjustSwiper"
+                breakpoints={{
+                  400: {
                     slidesPerView: 2,
                   },
-                768: {
-                  slidesPerView: 4,
-                },
-                1200: {
+                  768: {
+                    slidesPerView: 4,
+                  },
+                  1200: {
                     slidesPerView: 5,
                   },
-                1300: {
-                  slidesPerView: 7,
-                },
-                1600: {
+                  1300: {
+                    slidesPerView: 7,
+                  },
+                  1600: {
                     slidesPerView: 9,
                   },
-            }}
-          >
-            {data.map((song) => ( filterArray == "all" ? (
-              <SwiperSlide key={song.id}>
-                <Card
-                  img={song.image}
-                  follow={song.likes + " Likes"}
-                  title={song.title}
-                />
-              </SwiperSlide>
-            ): (
-              song.genre.key == filterArray ? (
-                <SwiperSlide key={song.id}>
-                <Card
-                  img={song.image}
-                  follow={song.likes + " Likes"}
-                  title={song.title}
-                />
-              </SwiperSlide>
-              ) : (
-                <></>
-              )
-            )
-            ))}
-          </Swiper>
-            <div className="adjustSwiperPreBtn" onClick={goPrev}>
-              <ArrowBackIosIcon className="arrow" />
+                }}
+              >
+                {data.map((song) =>
+                  filterArray === "all" ? (
+                    <SwiperSlide key={song.id}>
+                        <div>
+                          <Card
+                            img={song.image}
+                            follow={song.likes + " Likes"}
+                            title={song.title}
+                          />
+                        </div>
+                    </SwiperSlide>
+                  ) : song.genre.key === filterArray ? (
+                    <SwiperSlide key={song.id}>
+                        <div>
+                          <Card
+                            img={song.image}
+                            follow={song.likes + " Likes"}
+                            title={song.title}
+                          />
+                        </div>
+                    </SwiperSlide>
+                  ) : null
+                )}
+              </Swiper>
+              <div className="adjustSwiperPreBtn" onClick={goPrev}>
+                <ArrowBackIosIcon className="arrow" />
+              </div>
+              <div className="adjustSwiperNextBtn" onClick={goNext}>
+                <ArrowForwardIosIcon className="arrow" />
+              </div>
             </div>
-            <div className="adjustSwiperNextBtn" onClick={goNext}>
-              <ArrowForwardIosIcon className="arrow" />
-            </div>
-          </div>
           </Context.Provider>
         </div>
       )}
